@@ -18,6 +18,7 @@ class PlanetwatchClient:
     def __init__(self, username, password):
         self._scraper = cloudscraper.create_scraper(
             browser="chrome",
+            ecdhCurve='secp384r1'
         )
         self._auth_url = (
             f"{self.PLANET_AUTH_URL}realms/Planetwatch/protocol/openid-connect/auth"
